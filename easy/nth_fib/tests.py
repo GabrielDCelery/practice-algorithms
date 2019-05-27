@@ -2,7 +2,7 @@
 import unittest
 from solution import get_nth_fib
 
-class TestProgram(unittest.TestCase):
+class TestSolution(unittest.TestCase):
 	def test_case_1(self):
 		self.assertEqual(get_nth_fib(1), 0)
 	
