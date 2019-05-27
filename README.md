@@ -6,5 +6,6 @@ This is a repository for various algorithm problems
 * accounting for time-space complexity
 * unit tests to check the results
 
-Easy
-- Nth Fibonacci
+Algorithms
+
+* Nth Fibonacci (nth_fib)
