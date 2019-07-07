@@ -1,6 +1,7 @@
 # Time complexity O(n)
 # Space complexity O(1)
 
+
 def get_nth_fib(nth_fib):
     target_index = nth_fib - 1
     fib_slice = [0, 1, 1]
