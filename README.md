@@ -2,10 +2,10 @@
 
 This is a repository for various algorithm problems
 
-* written in python
-* accounting for time-space complexity
-* unit tests to check the results
+- written in javascript
+- accounting for time-space complexity
+- unit tests to check the results
 
-Algorithms
+Array operations/manipulations/sorting
 
-* Nth Fibonacci (nth_fib)
+- Smallest Number
