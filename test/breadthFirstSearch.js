@@ -1,4 +1,4 @@
-const program = require('../src/graphs/depthFirstSearch');
+const program = require('../src/graphs/breadthFirstSearch');
 const { expect } = require('chai');
 
 const test1 = new program.Node('A');
@@ -53,76 +53,76 @@ test5.children[4]
 test5.children[4].children[0].addChild('W').addChild('X');
 test5.children[4].children[0].children[1].addChild('Y').addChild('Z');
 
-describe('depth first search', () => {
+describe('breadth first search', () => {
   it('Test Case #1', function() {
-    expect(test1.depthFirstSearch()).to.deep.equal(['A', 'B', 'D', 'C']);
+    expect(test1.breadthFirstSearch()).to.deep.equal(['A', 'B', 'C', 'D']);
   });
 
   it('Test Case #2', function() {
-    expect(test2.depthFirstSearch()).to.deep.equal([
+    expect(test2.breadthFirstSearch()).to.deep.equal([
       'A',
       'B',
       'C',
-      'F',
       'D',
-      'E'
+      'E',
+      'F'
     ]);
   });
 
   it('Test Case #3', function() {
-    expect(test3.depthFirstSearch()).to.deep.equal([
+    expect(test3.breadthFirstSearch()).to.deep.equal([
       'A',
       'B',
       'C',
       'D',
-      'F',
-      'E'
+      'E',
+      'F'
     ]);
   });
 
   it('Test Case #4', function() {
-    expect(test4.depthFirstSearch()).to.deep.equal([
+    expect(test4.breadthFirstSearch()).to.deep.equal([
       'A',
       'B',
-      'E',
-      'F',
-      'I',
-      'J',
       'C',
       'D',
+      'E',
+      'F',
       'G',
-      'K',
-      'H'
+      'H',
+      'I',
+      'J',
+      'K'
     ]);
   });
 
   it('Test Case #5', function() {
-    expect(test5.depthFirstSearch()).to.deep.equal([
+    expect(test5.breadthFirstSearch()).to.deep.equal([
       'A',
       'B',
-      'E',
-      'Q',
-      'R',
-      'F',
-      'I',
-      'J',
-      'O',
       'C',
-      'P',
       'D',
-      'G',
-      'K',
-      'H',
       'L',
       'M',
+      'E',
+      'F',
+      'O',
+      'P',
+      'G',
+      'H',
       'S',
+      'T',
+      'U',
+      'V',
+      'Q',
+      'R',
+      'I',
+      'J',
+      'K',
       'W',
       'X',
       'Y',
-      'Z',
-      'T',
-      'U',
-      'V'
+      'Z'
     ]);
   });
 });

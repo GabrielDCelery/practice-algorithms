@@ -14,13 +14,16 @@ class Node {
     return this;
   }
 
-  depthFirstSearch(final = []) {
-    const { name, children } = this;
-    final.push(name);
+  breadthFirstSearch(final = []) {
+    const queue = [this];
 
-    children.forEach(child => {
-      return child.depthFirstSearch(final);
-    });
+    while (0 < queue.length) {
+      const { name, children } = queue.shift();
+      final.push(name);
+      children.forEach(child => {
+        queue.push(child);
+      });
+    }
 
     return final;
   }
