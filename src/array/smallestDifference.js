@@ -1,3 +1,8 @@
+/*
+Time complexity O(N * log(N) + M * log(M))
+Space complexity O(1)
+*/
+
 class SmallestDiffFinder {
   constructor() {
     this.arrayFirst = null;
@@ -47,12 +52,21 @@ class SmallestDiffFinder {
     this.final = [this.getFirstPointerValue(), this.getSecondPointerValue()];
   }
 
-  findSmallestDiffPair(arrayFirst, arraySecond) {
-    this.arrayFirst = arrayFirst.sort((a, b) => a - b);
-    this.arraySecond = arraySecond.sort((a, b) => a - b);
-    this.adjustResultIfCurrentDiffIsSmallerThanPreviousDiff();
+  initialize(arrayFirst, arraySecond) {
+    arrayFirst = arrayFirst.sort((a, b) => a - b);
+    arraySecond = arraySecond.sort((a, b) => a - b);
+    this.arrayFirst = arrayFirst;
+    this.arraySecond = arraySecond;
+    this.pointerFirst = 0;
+    this.pointerSecond = 0;
+    this.smallestDiff = this.getCurrentDiff();
+    this.final = [this.getFirstPointerValue(), this.getSecondPointerValue()];
+  }
 
-    do {
+  findSmallestDiffPair(arrayFirst, arraySecond) {
+    this.initialize(arrayFirst, arraySecond);
+
+    while (true) {
       if (this.getFirstPointerValue() === this.getSecondPointerValue()) {
         return this.final;
       }
@@ -81,7 +95,7 @@ class SmallestDiffFinder {
 
         continue;
       }
-    } while (true);
+    }
   }
 }
 
