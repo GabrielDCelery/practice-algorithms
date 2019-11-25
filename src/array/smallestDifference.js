@@ -79,18 +79,22 @@ class SmallestDiffFinder {
       }
 
       if (this.getFirstPointerValue() < this.getSecondPointerValue()) {
-        this.hasFirstPointerReachedEndOfArray()
-          ? this.moveSecondPointerToRightByOne()
-          : this.moveFirstPointerToRightByOne();
+        if (this.hasFirstPointerReachedEndOfArray()) {
+          return this.final;
+        }
+
+        this.moveFirstPointerToRightByOne();
         this.adjustResultIfCurrentDiffIsSmallerThanPreviousDiff();
 
         continue;
       }
 
       if (this.getFirstPointerValue() > this.getSecondPointerValue()) {
-        this.hasSecondPointerReachedEndOfArray()
-          ? this.moveFirstPointerToRightByOne()
-          : this.moveSecondPointerToRightByOne();
+        if (this.hasSecondPointerReachedEndOfArray()) {
+          return this.final;
+        }
+
+        this.moveSecondPointerToRightByOne();
         this.adjustResultIfCurrentDiffIsSmallerThanPreviousDiff();
 
         continue;
